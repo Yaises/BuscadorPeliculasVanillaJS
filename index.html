@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Películas</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="./img/icon.png">
+</head>
+<body>
+
+    <div class="background-overlay"></div>
+
+    <div class="container">
+        <header>
+            <h1 class="titulo">🎬 Cartelera</h1>
+            <p id="intro">Encuentra tu próxima obsesión.</p>
+        </header>
+
+        <form id="form-busqueda" class="buscador">
+            <div class="input-group">
+                <input type="text" id="input-titulo" placeholder="Ej: Matrix, Breaking Bad..." autocomplete="off">
+                <input type="number" id="input-ano" placeholder="Año (opc)" min="1900" max="2026">
+            </div>
+
+            <div id="filtros-tipo">
+                <label class="radio-card">
+                    <input type="radio" name="tipo" value="" checked>
+                    <span>Todo</span>
+                </label>
+                <label class="radio-card">
+                    <input type="radio" name="tipo" value="movie">
+                    <span>Películas</span>
+                </label>
+                <label class="radio-card">
+                    <input type="radio" name="tipo" value="series">
+                    <span>Series</span>
+                </label>
+            </div>
+
+            <button class="btn-buscar" type="submit">🔍 Buscar</button>
+        </form>
+
+        <div id="peliculas" class="grid-peliculas"></div>
+    </div>
+
+    <div id="detalle-overlay" class="detalle-overlay oculto">
+        <div class="detalle-content">
+            <button id="cerrar-detalle">&times;</button>
+            
+            <div class="detalle-flex">
+                <div class="detalle-img-container">
+                    <img id="detalle-poster" src="" alt="Poster" style="display:none;"> 
+                </div>
+                <div class="detalle-info">
+                    <h2 id="detalle-titulo">Título</h2>
+                    <div class="meta-data">
+                        <span id="detalle-year" class="tag"></span>
+                        <span id="detalle-runtime" class="tag"></span>
+                        <span id="detalle-genre" class="tag"></span>
+                    </div>
+                    <p id="detalle-director"><strong>Director:</strong> <span></span></p>
+                    <p id="detalle-actores"><strong>Reparto:</strong> <span></span></p>
+                    <p id="detalle-plot" class="plot"></p>
+                    <div id="detalle-ratings" class="ratings"></div>
+                    <button id="detalle-fav-btn" class="btn-fav">❤️ Añadir a Favoritos</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
